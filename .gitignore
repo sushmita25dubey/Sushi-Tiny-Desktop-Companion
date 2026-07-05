@@ -1,0 +1,42 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Build and packaging outputs (Electron)
+dist/
+build/
+out/
+*.vsix
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and Editor config files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment / Secret files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env

@@ -1,0 +1,79 @@
+{
+  "Greeting": [
+    "Hi, I'm Sushi!❤️",
+    "Hello! Let's code together!💻",
+    "Good day! How is the workflow going?✨",
+    "Ready to build something awesome?😊"
+  ],
+  "MorningGreeting": [
+    "Good morning! Ready for a productive coding session? 🌅",
+    "Rise and shine! Let's build something awesome!☀️",
+    "Morning! Hope you slept well. Let's make today count!☕"
+  ],
+  "EveningGreeting": [
+    "Good evening! Let's wrap up our code nicely.🌇",
+    "Evening! Hope you had a successful day of building!✨",
+    "Wrapping up for the day? Make sure to push your commits!💻"
+  ],
+  "Coding": [
+    "Keep coding!😊",
+    "Push to GitHub!",
+    "Let's build something!✨",
+    "Tabs or spaces? Let's write code!💻",
+    "Code is poetry in motion.📝"
+  ],
+  "Water": [
+    "Drink water 💧",
+    "Hydration check! Cup of water?🥛",
+    "Keep your mind fresh, drink water!💧"
+  ],
+  "Break": [
+    "Small progress counts.",
+    "Time to stretch your back!🧘‍♀️",
+    "Take a short screen break.👀",
+    "Stand up and breathe for a moment!🌬️"
+  ],
+  "Funny": [
+    "It compiled on my machine!🤷‍♂️",
+    "There are 10 types of people in the world... binary jokes!🤖",
+    "Is it a bug, or is it a feature?🐛"
+  ],
+  "Cute": [
+    "You're doing amazing!😘",
+    "You got this! Fighting!✊",
+    "I'm super happy to be here with you!❤️",
+    "You make coding look easy!🌟"
+  ],
+  "Motivation": [
+    "Small progress counts.",
+    "One line of code at a time!🚀",
+    "Every error is a lesson!🎓",
+    "Make today count!💫"
+  ],
+  "coding": [
+    "Keep coding! 💻",
+    "You're making great progress!",
+    "One bug closer to success!",
+    "Push your code! 🚀"
+  ],
+  "motivation": [
+    "You've got this! 🌸",
+    "Every small step counts.",
+    "Believe in yourself!"
+  ],
+  "water": [
+    "Time to drink water! 💧",
+    "Stay hydrated!",
+    "Take a sip!"
+  ],
+  "break": [
+    "Stretch for a minute!",
+    "Rest your eyes 👀",
+    "Take a short break!"
+  ],
+  "cute": [
+    "I'm happy to be here! 💕",
+    "Let's build something awesome!",
+    "I'm cheering for you!"
+  ]
+}

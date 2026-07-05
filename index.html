@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sushi Desktop Companion widget for Windows, displaying local system performance statistics and custom desktop companion metrics.">
+  <title>Sushi Companion Widget</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+  <!-- Sushi Character Element -->
+  <div id="sushi">
+    <div id="speech-bubble" class="speech-bubble"></div>
+    <div id="shadow" class="shadow"></div>
+    <img id="character" alt="Sushi Character">
+  </div>
+
+  <!-- Custom Context Menu -->
+  <div id="context-menu" class="context-menu">
+    <div class="menu-item" id="menu-settings">⚙️ Settings</div>
+    <div class="menu-item" id="menu-hide">👁️ Hide</div>
+    <div class="menu-item" id="menu-exit">❌ Exit</div>
+  </div>
+
+  <!-- Settings Menu Modal -->
+  <div id="settings-modal" class="settings-modal">
+    <div class="settings-content">
+      <header class="settings-header">
+        <h2>⚙️ Settings</h2>
+        <button id="close-settings" class="close-btn">×</button>
+      </header>
+      <div class="settings-body">
+        <div class="setting-row">
+          <label for="toggle-walk">Enable Walking</label>
+          <input type="checkbox" id="toggle-walk" checked>
+        </div>
+        <div class="setting-row">
+          <label for="toggle-speech">Enable Speech Bubbles</label>
+          <input type="checkbox" id="toggle-speech" checked>
+        </div>
+        <div class="setting-row info">
+          <p>Sushi Companion v1.1</p>
+          <p>Double-click Sushi or right-click to access settings.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/CharacterManager.js"></script>
+  <script src="js/AnimationEngine.js"></script>
+  <script src="js/SpeechManager.js"></script>
+  <script src="js/DialogueManager.js"></script>
+  <script src="js/BehaviorManager.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>

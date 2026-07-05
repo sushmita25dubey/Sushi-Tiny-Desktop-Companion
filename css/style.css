@@ -1,0 +1,337 @@
+/* CSS/Style.css - Sushi Companion Styling */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: transparent !important;
+  overflow: hidden;
+}
+
+/* Sushi Character Styling */
+#sushi {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  pointer-events: auto;
+  user-select: none;
+  image-rendering: pixelated;
+  transition: transform 0.25s ease;
+  z-index: 1000;
+  cursor: grab;
+}
+
+#sushi:active {
+  cursor: grabbing;
+}
+
+#character {
+  display: block;
+  pointer-events: none; /* Mouse events bubble up to #sushi for dragging */
+}
+
+#character.flipped {
+  transform: scaleX(-1);
+}
+
+/* Speech Bubble Styling */
+.speech-bubble {
+  position: absolute;
+  bottom: calc(100% + 14px); /* Float 14px above character */
+  left: 50%;
+  transform: translateX(-50%);
+  
+  background: #ffffff;
+  color: #1a1a1a;
+  padding: 10px 16px;
+  border-radius: 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  white-space: nowrap;
+  
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1001;
+  pointer-events: none; /* Avoid blocking clicks/drags to character */
+}
+
+/* Pointer tip at the bottom center of the speech bubble */
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 7px;
+  border-style: solid;
+  border-color: #ffffff transparent transparent transparent;
+}
+
+/* Show class to trigger fade-in transition */
+.speech-bubble.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Custom Context Menu Styling */
+.context-menu {
+  position: fixed;
+  background: rgba(30, 30, 35, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 6px 0;
+  width: 120px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+  pointer-events: auto;
+}
+
+.context-menu.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-item {
+  padding: 8px 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s ease;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Settings Modal Styling */
+.settings-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  pointer-events: none;
+}
+
+.settings-modal.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.settings-content {
+  background: rgba(25, 25, 30, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  width: 240px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  padding: 16px;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+}
+
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 8px;
+}
+
+.settings-header h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: #ffffff;
+}
+
+.settings-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.setting-row label {
+  cursor: pointer;
+}
+
+.setting-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #ff4b2b;
+  cursor: pointer;
+}
+
+.setting-row.info {
+  margin-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 10px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+/* Soft Shadow Styling */
+.shadow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45%;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.16);
+  border-radius: 50%;
+  filter: blur(2px);
+  z-index: -1;
+  pointer-events: none;
+  transition: transform 0.25s ease, width 0.25s ease;
+}
+
+/* Animation Keyframes */
+
+/* Gentle breathing animation: stretches vertically, squishes horizontally */
+@keyframes breathe {
+  0%, 100% {
+    transform: scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: scaleY(1.025) scaleX(0.985);
+  }
+}
+
+/* Walking bounce animation: bobs up and down */
+@keyframes walk-bob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Slow sleeping breath animation: slower and less pronounced scale change */
+@keyframes sleep-breathe {
+  0%, 100% {
+    transform: scaleY(1) scaleX(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: scaleY(1.012) scaleX(0.993);
+    opacity: 0.82;
+  }
+}
+
+/* Animation Classes applied to #character */
+.breathe {
+  animation: breathe 3s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.walking-bob {
+  animation: walk-bob 0.35s linear infinite;
+  transform-origin: bottom center;
+}
+
+.sleeping-breathe {
+  animation: sleep-breathe 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+/* Look around animation: shifts horizontally and flips side-to-side */
+@keyframes look-around {
+  0%, 100% {
+    transform: translateX(0) scaleX(1);
+  }
+  20% {
+    transform: translateX(-4px) scaleX(1);
+  }
+  30% {
+    transform: translateX(-4px) scaleX(-1);
+  }
+  60% {
+    transform: translateX(4px) scaleX(-1);
+  }
+  70% {
+    transform: translateX(4px) scaleX(1);
+  }
+}
+
+/* Tiny bounce animation: squishes down, pops up, squishes on landing */
+@keyframes tiny-bounce {
+  0%, 100% {
+    transform: translateY(0) scaleY(1) scaleX(1);
+  }
+  30% {
+    transform: translateY(0) scaleY(0.85) scaleX(1.1);
+  }
+  50% {
+    transform: translateY(-12px) scaleY(1.1) scaleX(0.9);
+  }
+  70% {
+    transform: translateY(2px) scaleY(0.9) scaleX(1.05);
+  }
+  85% {
+    transform: translateY(-2px) scaleY(1.02) scaleX(0.98);
+  }
+}
+
+.look-around {
+  animation: look-around 3s ease-in-out;
+  transform-origin: bottom center;
+}
+
+.tiny-bounce {
+  animation: tiny-bounce 1s ease-in-out;
+  transform-origin: bottom center;
+}
